@@ -1,0 +1,349 @@
+  /* General Tab Styles */
+  .nav-tabs {
+    border-bottom: 2px solid transparent;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .nav-tabs .nav-item {
+    flex: 1;
+  }
+
+  .nav-tabs .nav-link {
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: #333;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s, background-color 0.3s;
+    font-weight: 500;
+  }
+
+  .nav-tabs .nav-link::before,
+  .nav-tabs .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #007bff;
+    transition: width 0.3s ease, left 0.3s ease;
+    border-radius: 4px;
+  }
+
+  .nav-tabs .nav-link::before {
+    left: 50%;
+  }
+
+  .nav-tabs .nav-link::after {
+    right: 50%;
+  }
+
+  .nav-tabs .nav-link:hover,
+  .nav-tabs .nav-link:focus {
+    color: #fff;
+    background-color: #007bff;
+  }
+
+  .nav-tabs .nav-link:hover::before,
+  .nav-tabs .nav-link:hover::after,
+  .nav-tabs .nav-link:focus::before,
+  .nav-tabs .nav-link:focus::after {
+    width: 100%;
+  }
+
+  .nav-tabs .nav-link.active {
+    color: #fff;
+    background: linear-gradient(to right, #007bff, #00d4ff);
+    border-color: #007bff;
+  }
+
+  .nav-tabs .nav-link.active::before,
+  .nav-tabs .nav-link.active::after {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .nav-tabs .nav-item {
+      flex: 1 0 100%;
+    }
+
+    .nav-tabs .nav-link {
+      border-bottom: 2px solid #ddd;
+    }
+
+    .nav-tabs .nav-link.active {
+      border-bottom: 2px solid #007bff;
+      background: linear-gradient(to right, #007bff, #00d4ff);
+    }
+  }
+
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .table th,
+  .table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border: 1px solid #dee2e6;
+  }
+
+  .table th {
+    background: linear-gradient(135deg, #9e9e9e, #bdbdbd);
+    /* Softer gradient */
+    color: #333;
+    /* Darker text color for better readability */
+    border-bottom: 2px solid #ddd;
+    /* Lighter border color */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    /* Slightly less letter spacing */
+  }
+
+  .table td {
+    background-color: #fff;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .table tbody tr:hover td {
+    background-color: #f1f2f6;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .table-hover tbody tr:hover {
+    color: #2d3436;
+    background-color: rgba(0, 0, 0, 0.075);
+  }
+
+  .table td {
+    transition: all 0.3s ease;
+  }
+
+  /* Add responsiveness */
+  @media (max-width: 768px) {
+    .table thead {
+      display: none;
+    }
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+      display: block;
+      width: 100%;
+    }
+
+    .table tr {
+      margin-bottom: 0.625rem;
+    }
+
+    .table td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+
+    .table td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 0.75rem;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+
+  /* Base button styles */
+  .btn {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    /* Adjusted padding for smaller buttons */
+    font-size: 0.875rem;
+    /* Slightly smaller font size */
+    display: inline-flex;
+    /* Inline flex for consistent sizing */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for a 3D effect */
+  }
+
+  .btn i {
+    transition: transform 0.3s ease;
+    margin-right: 0.5rem;
+    /* Space between icon and text */
+  }
+
+  /* Specific button styles */
+  .btn-warning {
+    background-color: #fdcb6e;
+    color: #2d3436;
+  }
+
+  .btn-warning:hover {
+    background-color: #e17055;
+    color: #ffffff;
+  }
+
+  .btn-danger {
+    background-color: #d63031;
+    color: #ffffff;
+  }
+
+  .btn-danger:hover {
+    background-color: #c0392b;
+    color: #ffffff;
+  }
+
+  /* Icon scale effect on hover */
+  .btn:hover i {
+    transform: scale(1.2);
+    /* Slightly increased scale for better visual effect */
+  }
+
+  /* Additional styles for button size consistency */
+  .btn-sm {
+    font-size: 0.75rem;
+    /* Smaller font size for small buttons */
+    padding: 0.25rem 0.5rem;
+    /* Consistent padding for small buttons */
+  }
+
+  /* Icon styles */
+  .fas {
+    margin-right: 5px;
+  }
+
+  /* Animation on hover */
+  .table tbody tr:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .capitalize {
+    text-transform: capitalize;
+  }
+  /* Ensure cards are in a single row */
+.row.g-3 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  
+  .card-icon {
+    background: #f8f9fa;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+  
+  .ps-3 {
+    padding-left: 1rem;
+  }
+  
+  @media (max-width: 992px) {
+    .col-xxl-4 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  #salesChart {
+    border-radius: 20px;
+    background: radial-gradient(circle at top left, #ffffff, #e8eff2);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease, background 0.5s ease;
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+    animation: pulse 5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    50% {
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  #salesChart::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
+    opacity: 0.3;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: scale(1.1);
+  }
+  
+  #salesChart:hover {
+    transform: scale(1.1) rotate(1deg);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  #salesChart:hover::before {
+    opacity: 0.3; /* Reset opacity to the default value on hover */
+    transform: scale(1.1); /* Reset transform scale to the default value on hover */
+  }
+  
+  .chart-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust the height as needed */
+    perspective: 1000px; /* Add perspective for the 3D effect */
+  }
+
+  .chart-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(10deg) rotateY(-10deg); /* Add rotation for 3D effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for depth effect */
+  }
+  /* Change cursor to pointer when hovering over the canvas */
+canvas {
+  cursor: pointer;
+}
