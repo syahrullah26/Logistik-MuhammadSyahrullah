@@ -73,8 +73,8 @@
                                         <th scope="col">Kode Barang</th>
                                         <th scope="col">Nama Barang</th>
                                         <th scope="col">Quantity</th>
-                                        <th scope="col">Origin</th>
-                                        <th scope="col">Tanggal Masuk</th>
+                                        <th scope="col">Destination</th>
+                                        <th scope="col">Tanggal Keluar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
